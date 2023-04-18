@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../config";
-import { addItem } from "../utils/cartSlice";
 import useRestaurant from "../utils/useRestaurant";
 import Shimmer from "./Shimmer";
 import { addIte } from "../utils/cartSlice";
@@ -43,7 +42,7 @@ const RestaurantMenu = ()=>{
       <h1>Menu</h1>
       <ul>{
           Object.values(restaurant?.menu?.items).map((item)=>(
-          <li key={item.id}>{item.name} - <button className="p-2 bg-green-50" onClick={()=>addFoodItem(item)}> Add</button></li>
+          <li key={item.id}>{item.name} -{" "} <button className="p-1 bg-green-50" onClick={()=>addFoodItem(item)}> Add</button></li>
         ))}
       </ul>
     </div>
